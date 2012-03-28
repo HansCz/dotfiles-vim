@@ -1,4 +1,4 @@
-map <F1> :NERDTreeToggle<CR>
+map <F1> :NERDTreeMirrorToggle<CR>
 map <S-F1> :MRU<CR>
 
 " ,vrc opens my vimrc in a new tab
