@@ -42,6 +42,9 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
+set backupdir=./.backup,.,/tmp    " Set backup directory for swap files
+set directory=.,./.backup,/tmp    " List of directory names for the swap file
+
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 
