@@ -54,17 +54,24 @@ set list
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
-set cursorline!                   " highlight the line the cursor is currently on
 set mouse=a " Add mousing
 
 set background=dark
 colorscheme solarized " Add a nice colorscheme
+
+" Change cursor line depending on mode
+
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
 
 " source my keybindings and vimrc files every time they are written to disk
 
 if has("autocmd")
   autocmd! bufwritepost ~/bin/dotfiles/vim/vimrc source $MYVIMRC
   autocmd! bufwritepost ~/bin/dotfiles/vim/keybindings.vim source ~/bin/dotfiles/vim/keybindings.vim
+  if has("gui_running")
+     autocmd! bufwritepost ~/bin/dotfiles/vim/gvimrc source ~/.gvimrc
+  endif
 endif
 autocmd BufWinEnter * set foldlevel=999999 "unfold all files before opening in a new buffer
 
@@ -97,6 +104,8 @@ let mapleader = "," " Set my custom modifier key
 
 source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
 
+" I need some special settings for MacVim. these should only be loaded if
+" it's a gui version of vim (of which MacVim is one)
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
       :source ~/.vimrc
@@ -106,4 +115,3 @@ if !exists("*ReloadConfigs")
   endfunction
   command! Recfg call ReloadConfigs()
 endif
-
