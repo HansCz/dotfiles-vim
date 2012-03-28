@@ -1,6 +1,9 @@
 " HansCz's Vim configuration.
 " " Copy or symlink to ~/.vimrc or ~/_vimrc.
 "
+" Load pathogen
+source ~/bin/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -83,9 +86,7 @@ autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 " Let pathogen build the help and load all bundles
 filetype off
 
-if !exists("g:loaded_pathogen")
-  call pathogen#runtime_append_all_bundles()
-endif
+call pathogen#infect('~/bin/dotfiles/vim/bundle')
 
 " commented out generation of help tags, since it dirties up my checked out
 " git submodule-handled bundle trees
