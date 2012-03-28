@@ -1,13 +1,20 @@
-" Example Vim configuration.
+" HansCz's Vim configuration.
 " " Copy or symlink to ~/.vimrc or ~/_vimrc.
 "
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+" filetype plugin indent on         " Turn on file type detection.
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
+
+set wrap                          " word wrapping,
+                                  " but only line breaks inserted
+                                  " when press the Enter key explicitly
+set linebreak                     "
+
+set nolist                        " list disables linebreak
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
@@ -34,7 +41,6 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
@@ -46,11 +52,58 @@ set listchars=tab:▸\ ,trail:·     " Show trailing whitespace and tabs
 set list
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme emacs
+set cursorline!                   " highlight the line the cursor is currently on
+set mouse=a " Add mousing
+
+set background=dark
+colorscheme solarized " Add a nice colorscheme
+
+" source my keybindings and vimrc files every time they are written to disk
+
+if has("autocmd")
+  autocmd! bufwritepost ~/bin/dotfiles/vim/vimrc source $MYVIMRC
+  autocmd! bufwritepost ~/bin/dotfiles/vim/keybindings.vim source ~/bin/dotfiles/vim/keybindings.vim
+endif
+autocmd BufWinEnter * set foldlevel=999999 "unfold all files before opening in a new buffer
 
 " Automatic fold settings for specific files. Uncomment to use.
+
 autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+
+" Let pathogen build the help and load all bundles
+filetype off
+
+if !exists("g:loaded_pathogen")
+  call pathogen#runtime_append_all_bundles()
+endif
+
+" commented out generation of help tags, since it dirties up my checked out
+" git submodule-handled bundle trees
+" call pathogen#helptags()
+
+" Turn on file type detection. (Must be after fugitive setup)
+filetype plugin indent on
+
+" " Remote browsing
+
+let g:netrw_liststyle=3 " Use tree style for remote directory browsing
+let g:netrw_ftp_cmd="ftp -p" " set ftp to default to passive mode
+ " Keys and binds
+
+let mapleader = "," " Set my custom modifier key
+
+source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
+
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+      :source ~/.vimrc
+      if has("gui_running")
+          :source ~/.gvimrc
+      endif
+  endfunction
+  command! Recfg call ReloadConfigs()
+endif
 
