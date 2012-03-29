@@ -70,13 +70,25 @@ colorscheme solarized " Add a nice colorscheme
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
 
+" I need some special settings for MacVim. these should only be loaded if
+" it's a gui version of vim (of which MacVim is one)
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+      :source ~/.vimrc
+      if has("gui_running")
+          :source ~/.gvimrc
+      endif
+  endfunction
+  command! Recfg call ReloadConfigs()
+endif
+
 " source my keybindings and vimrc files every time they are written to disk
 
 if has("autocmd")
-  autocmd! bufwritepost ~/bin/dotfiles/vim/vimrc source $MYVIMRC
-  autocmd! bufwritepost ~/bin/dotfiles/vim/keybindings.vim source ~/bin/dotfiles/vim/keybindings.vim
+  autocmd! bufwritepost ~/bin/dotfiles/vim/vimrc call ReloadConfigs()
+  autocmd! bufwritepost ~/bin/dotfiles/vim/keybindings.vim call ReloadConfigs()
   if has("gui_running")
-     autocmd! bufwritepost ~/bin/dotfiles/vim/gvimrc source ~/.gvimrc
+     autocmd! bufwritepost ~/bin/dotfiles/vim/gvimrc call ReloadConfigs()
   endif
 endif
 autocmd BufWinEnter * set foldlevel=999999 "unfold all files before opening in a new buffer
@@ -108,14 +120,3 @@ let mapleader = "," " Set my custom modifier key
 
 source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
 
-" I need some special settings for MacVim. these should only be loaded if
-" it's a gui version of vim (of which MacVim is one)
-if !exists("*ReloadConfigs")
-  function ReloadConfigs()
-      :source ~/.vimrc
-      if has("gui_running")
-          :source ~/.gvimrc
-      endif
-  endfunction
-  command! Recfg call ReloadConfigs()
-endif
