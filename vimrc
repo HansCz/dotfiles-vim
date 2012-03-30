@@ -118,7 +118,20 @@ let g:netrw_ftp_cmd="ftp -p" " set ftp to default to passive mode
 
 let mapleader = "," " Set my custom modifier key
 
-source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
 
 " current working dir now set when NERDTree changes root
 autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endif
+
+" Setup syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+                              \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript', 'eruby'],
+                              \ 'passive_filetypes': ['css', 'html'] }
+
+" Setup code folding
+set foldmethod=indent " fold based on code indent
+set foldnestmax=10    " maximum number of levels to fold
+set nofoldenable      " don't fold by default
+set foldlevel=1
+
+" Source other files
+source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
