@@ -16,3 +16,7 @@ vnoremap <C-S-Tab> <gv
 
 " LustyJuggler lives on <Leader>b
 nmap <leader>b :LustyJuggler<CR>
+
+let macvim_skip_cmd_opt_movement = 1
+map <D-M-Right> :tabnext<CR>
+map <D-M-Left> :tabprevious<CR>
