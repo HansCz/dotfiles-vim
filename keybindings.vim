@@ -14,3 +14,5 @@ nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
 vnoremap <Tab> >gv
 vnoremap <C-S-Tab> <gv
 
+" LustyJuggler lives on <Leader>b
+nmap <leader>b :LustyJuggler<CR>
