@@ -48,9 +48,9 @@ set directory=/tmp                " List of directory names for the swap file
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 
-set tabstop=2                    " Global tab width.
-set shiftwidth=2                 " And again, related.
-set expandtab                    " Use spaces instead of tabs
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
 
