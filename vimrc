@@ -120,3 +120,5 @@ let mapleader = "," " Set my custom modifier key
 
 source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
 
+" current working dir now set when NERDTree changes root
+autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endif
