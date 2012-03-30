@@ -21,3 +21,20 @@ nmap <leader>b :LustyJuggler<CR>
 let macvim_skip_cmd_opt_movement = 1
 map <D-M-Right> :tabnext<CR>
 map <D-M-Left> :tabprevious<CR>
+
+" fold it!
+
+" " toggle single fold
+inoremap <F2> <C-O>za
+nnoremap <F2> za
+onoremap <F2> <C-C>za
+
+" " unfold recursively
+inoremap <F3> <C-O>zR
+nnoremap <F3> zR
+onoremap <F3> <C-C>zR
+
+" " fold recursively
+inoremap <S-F3> <C-O>zM
+nnoremap <S-F3> zM
+onoremap <S-F3> <C-C>zM
