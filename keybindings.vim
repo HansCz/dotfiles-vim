@@ -22,6 +22,11 @@ let macvim_skip_cmd_opt_movement = 1
 map <D-M-Right> :tabnext<CR>
 map <D-M-Left> :tabprevious<CR>
 
+" git stuff
+
+nnoremap <leader>gdc :Git diff --cached<CR>
+nnoremap <leader>gc :Gcommit<CR>
+
 " fold it!
 
 " " toggle single fold
