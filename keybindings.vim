@@ -3,6 +3,7 @@ map <S-F1> :MRU<CR>
 
 " ,vrc opens my vimrc in a new tab
 nmap <leader>vrc :tabedit ~/bin/dotfiles/vim/vimrc<CR>
+nmap <leader>kvrc :tabedit ~/bin/dotfiles/vim/keybindings.vim<CR>
 
 "vimdiff current vs git head (fugitive extension)
 nnoremap <Leader>gd :Gdiff<cr>
