@@ -119,6 +119,8 @@ let g:netrw_ftp_cmd="ftp -p" " set ftp to default to passive mode
 
 let mapleader = "," " Set my custom modifier key
 
+"free up Command and Alt qualifier keys in macvim
+let macvim_skip_cmd_opt_movement = 1
 
 " current working dir now set when NERDTree changes root
 autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endif
