@@ -27,6 +27,7 @@ map <D-M-Left> :tabprevious<CR>
 
 nnoremap <leader>gdc :Git diff --cached<CR>
 nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gst :Gstatus<CR>
 
 " fold it!
 
