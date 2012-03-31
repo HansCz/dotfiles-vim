@@ -4,6 +4,7 @@
 " Load pathogen
 source ~/bin/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 
+set shell=/bin/zsh
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
