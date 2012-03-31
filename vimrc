@@ -123,9 +123,13 @@ let mapleader = "," " Set my custom modifier key
 autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endif
 
 " Setup syntastic
+" " filetypes in active mode are checked on save. Ditto in passive mode are
+" checked when running :SyntasticCheck
 let g:syntastic_mode_map = { 'mode': 'active',
                               \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript', 'eruby'],
                               \ 'passive_filetypes': ['css', 'html'] }
+" jump to first error after execution
+let g:syntastic_auto_jump=1
 
 " Setup code folding
 set foldmethod=indent " fold based on code indent
