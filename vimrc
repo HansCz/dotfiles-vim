@@ -140,5 +140,19 @@ set foldnestmax=10    " maximum number of levels to fold
 set nofoldenable      " don't fold by default
 set foldlevel=1
 
+" Z - cd to recent / frequent directories
+command! -nargs=* Z :call Z(<f-args>)
+function! Z(...)
+  let cmd = 'fasd -d -e printf'
+  for arg in a:000
+    let cmd = cmd . ' ' . arg
+  endfor
+  let path = system(cmd)
+  if isdirectory(path)
+    echo path
+    exec 'cd ' . path
+  endif
+endfunction
+
 " Source other files
 source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
