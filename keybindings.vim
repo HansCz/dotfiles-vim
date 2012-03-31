@@ -44,3 +44,7 @@ onoremap <F3> <C-C>zR
 inoremap <S-F3> <C-O>zM
 nnoremap <S-F3> zM
 onoremap <S-F3> <C-C>zM
+
+" TComment remappings
+nmap <D-/> gcc<CR>
+vmap <D-/> gcgv<CR>
