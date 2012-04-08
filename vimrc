@@ -99,6 +99,11 @@ autocmd BufWinEnter * set foldlevel=999999 "unfold all files before opening in a
 autocmd FileType ruby setlocal foldmethod=syntax
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
+" Set some custom extension > filetype matches
+au BufNewFile,BufRead Guardfile set filetype=ruby
+au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead Gemfile.lock set filetype=ruby
+
 " Let pathogen build the help and load all bundles
 filetype off
 
