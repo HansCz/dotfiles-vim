@@ -130,7 +130,7 @@ autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endi
 " " filetypes in active mode are checked on save. Ditto in passive mode are
 " checked when running :SyntasticCheck
 let g:syntastic_mode_map = { 'mode': 'active',
-                              \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript', 'eruby'],
+                              \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript', 'eruby', 'less'],
                               \ 'passive_filetypes': ['css', 'html'] }
 " jump to first error after execution
 let g:syntastic_auto_jump=1
