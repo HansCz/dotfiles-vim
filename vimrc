@@ -159,6 +159,10 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
-
+" Setup snipmate
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {} 
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails'
+let g:snipMate.scope_aliases['haml'] = 'ruby,haml'
 " Source other files
 source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
