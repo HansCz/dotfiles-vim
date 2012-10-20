@@ -2,7 +2,7 @@
 " " Copy or symlink to ~/.vimrc or ~/_vimrc.
 "
 " Load pathogen
-source ~/bin/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute "source ". fnamemodify(resolve(expand('<sfile>')), ":p:h") ."/bundle/vim-pathogen/autoload/pathogen.vim"
 
 set shell=/bin/zsh
 set nocompatible                  " Must come first because it changes other options.
@@ -104,7 +104,7 @@ au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 " Let pathogen build the help and load all bundles
 filetype off
 
-call pathogen#infect('~/bin/dotfiles/vim/bundle')
+call pathogen#infect(fnamemodify(resolve(expand('<sfile>')), ":p:h") ."/bundle")
 
 " commented out generation of help tags, since it dirties up my checked out
 " git submodule-handled bundle trees
@@ -134,9 +134,11 @@ autocmd VimEnter * if exists(":NERDTree") | exe "let NERDTreeChDirMode=2" | endi
 " Setup syntastic
 " " filetypes in active mode are checked on save. Ditto in passive mode are
 " checked when running :SyntasticCheck
+
 let g:syntastic_mode_map = { 'mode': 'active',
                               \ 'active_filetypes': ['ruby', 'php', 'coffee', 'javascript', 'eruby', 'less'],
                               \ 'passive_filetypes': ['css', 'html'] }
+
 " jump to first error after execution
 let g:syntastic_auto_jump=1
 
@@ -159,10 +161,14 @@ function! Z(...)
     exec 'cd ' . path
   endif
 endfunction
+
 " Setup snipmate
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {} 
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails'
 let g:snipMate.scope_aliases['haml'] = 'ruby,haml'
+
 " Source other files
-source $HOME/bin/dotfiles/vim/keybindings.vim " Load my keybindings
+
+" Load my keybindings
+execute "source ". fnamemodify(resolve(expand('<sfile>')), ":p:h") ."/keybindings.vim"
