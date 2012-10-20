@@ -67,9 +67,6 @@
 [submodule "bundle/vim-togglelist"]
 	path = bundle/vim-togglelist
 	url = git@github.com:HansCz/vim-togglelist.git
-[submodule "bundle/markdown-preview.vim"]
-	path = bundle/markdown-preview.vim
-	url = git@github.com:HansCz/markdown-preview.vim.git
 [submodule "bundle/change-inside-surroundings.vim"]
 	path = bundle/change-inside-surroundings.vim
 	url = git://github.com/briandoll/change-inside-surroundings.vim.git
