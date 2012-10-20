@@ -63,9 +63,6 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set mouse=a " Add mousing
 
-set background=dark
-colorscheme solarized " Add a nice colorscheme
-
 " Change cursor line depending on mode
 
 :autocmd InsertEnter * set cul
@@ -112,6 +109,9 @@ call pathogen#infect('~/bin/dotfiles/vim/bundle')
 " commented out generation of help tags, since it dirties up my checked out
 " git submodule-handled bundle trees
 " call pathogen#helptags()
+
+set background=dark
+colorscheme solarized " Add a nice colorscheme
 
 " Turn on file type detection. (Must be after fugitive setup)
 filetype plugin indent on
