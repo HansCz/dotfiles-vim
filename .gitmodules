@@ -64,9 +64,6 @@
 [submodule "bundle/LustyExplorer"]
 	path = bundle/LustyExplorer
 	url = git://github.com/vim-scripts/LustyExplorer.git
-[submodule "bundle/vim-togglelist"]
-	path = bundle/vim-togglelist
-	url = git@github.com:HansCz/vim-togglelist.git
 [submodule "bundle/change-inside-surroundings.vim"]
 	path = bundle/change-inside-surroundings.vim
 	url = git://github.com/briandoll/change-inside-surroundings.vim.git
