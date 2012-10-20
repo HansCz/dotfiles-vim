@@ -1,0 +1,84 @@
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/EasyMotion"]
+	path = bundle/EasyMotion
+	url = git://github.com/vim-scripts/EasyMotion.git
+[submodule "bundle/mru.vim"]
+	path = bundle/mru.vim
+	url = git://github.com/vim-scripts/mru.vim.git
+[submodule "bundle/bash-support"]
+	path = bundle/bash-support
+	url = git://github.com/vim-scripts/bash-support.vim.git
+[submodule "bundle/rename2"]
+	path = bundle/rename2
+	url = git://github.com/vim-scripts/Rename2.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-sparkup"]
+	path = bundle/vim-sparkup
+	url = git://github.com/bingaman/vim-sparkup.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/tcomment_vim"]
+	path = bundle/tcomment_vim
+	url = git://github.com/tomtom/tcomment_vim.git
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/vim-pathogen"]
+	path = bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-coffee-script.git"]
+	path = bundle/vim-coffee-script.git
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/LustyJuggler"]
+	path = bundle/LustyJuggler
+	url = git://github.com/vim-scripts/LustyJuggler.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git
+[submodule "bundle/vim-rvm"]
+	path = bundle/vim-rvm
+	url = git://github.com/tpope/vim-rvm.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/LustyExplorer"]
+	path = bundle/LustyExplorer
+	url = git://github.com/vim-scripts/LustyExplorer.git
+[submodule "bundle/vim-togglelist"]
+	path = bundle/vim-togglelist
+	url = git@github.com:HansCz/vim-togglelist.git
+[submodule "bundle/markdown-preview.vim"]
+	path = bundle/markdown-preview.vim
+	url = git@github.com:HansCz/markdown-preview.vim.git
+[submodule "bundle/change-inside-surroundings.vim"]
+	path = bundle/change-inside-surroundings.vim
+	url = git://github.com/briandoll/change-inside-surroundings.vim.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
